@@ -1,5 +1,9 @@
-.font-title {
-	font-family: Montserrat, Helvetica, Arial, sans-serif;
+* {
+	font-family: Montserrat, Verdana, Helvetica, Arial, sans-serif;
+}
+.font-content {
+	font-family: Helvetica, sans-serif;
+	letter-spacing: 0.02em;
 }
 .column {
 	display: flex;
