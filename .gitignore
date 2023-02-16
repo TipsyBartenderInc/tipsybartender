@@ -1,0 +1,16 @@
+.DS_Store
+
+# Build files
+.tired
+
+# Large template data files
+templates/data/*
+
+# Large image files
+include/png/*
+include/jpg/*
+include/jpeg/*
+include/svg/*
+
+# Misc
+todo.md
