@@ -1,0 +1,18 @@
+.twodrinks {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 0.5rem;
+
+	.drink-card {
+		width: 50%;
+		font-size: 90%;
+		padding-bottom: 0.5rem;
+		
+		&:nth-child(2n + 1){
+			padding-right: 0.25rem;
+		}
+		&:nth-child(2n){
+			padding-left: 0.25rem;
+		}
+	}
+}

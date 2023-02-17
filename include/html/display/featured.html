@@ -1,0 +1,9 @@
+<include src="display/featured.scss" />
+<div class="featured px-2 {class}">
+	<include src="row/twodrinks.html">
+		{ for data of template.featured4 }
+			<include src="card/drink.html" base="{base}Featured{_index}" img="{data.image_url}"
+				alt="{data.title} image" p="{data.title}" />
+		{ end }
+	</include>
+</div>

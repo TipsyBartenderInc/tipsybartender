@@ -1,0 +1,11 @@
+<include src="display/trending.scss" />
+<div class="trending px-2">
+	<h3>Trending Drinks</h3>
+
+	<include src="row/twodrinks.html">
+		{ for data of template.trending4 }
+			<include src="card/drink.html" base="{base}Trending{_index}" img="{data.image_url}"
+				alt="{data.title} image" p="{data.title}" />
+		{ end }
+	</include>
+</div>
