@@ -3,7 +3,7 @@
 	<h3>Trending Drinks</h3>
 
 	<include src="row/twodrinks.html">
-		{ for data of _template.trending4 }
+		{ for data of _template.trending4.pages }
 			<include src="card/drink.html" base="{base}Trending{_index}" img="{data.image_url}"
 				alt="{data.title} image" p="{data.title}" />
 		{ end }
