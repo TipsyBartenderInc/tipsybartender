@@ -1,9 +1,10 @@
 <include src="display/featured.scss" />
-<div class="featured px-2 {classes}">
+<div class="featured px-2 <? log(attr.classes); ?>">
 	<include src="row/twodrinks.html">
-		{ for data of _template.featured4.pages } 
-		<include src="card/drink.html" base="{base}Featured{_index}" img="{data.image_url}" alt="{data.title} image"
-			p="{data.title}" />
-		{ end }
+		<? for(let a = 0; a < template.featured.pages.length; a++){ const data = template.featured.pages[a]; ?>
+		<include src="card/drink.html" base="<? log(attr.base); ?>Featured<? log(a); ?>"
+			img="<? log(data.image_url); ?>" alt="<? log(data.title); ?> image" p="<? log(data.title); ?>" />
+
+		<? } ?>
 	</include>
 </div>

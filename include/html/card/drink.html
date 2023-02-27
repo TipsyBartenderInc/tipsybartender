@@ -1,7 +1,7 @@
 <div class="drink-card">
 	<include src="card/drink.scss" />
 	<div class="drink-card-image">
-		<include id="{base}Drink" src="{img}" alt="{alt}" />
+		<include id="<?log(attr.base)?>Drink" src="<?log(attr.img)?>" alt="<?log(attr.alt)?>" />
 	</div>
-	<p>{p}</p>
+	<p><?log(attr.p)?></p>
 </div>
