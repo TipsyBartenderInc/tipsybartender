@@ -1,7 +1,9 @@
 <div class="drink-card">
 	<include src="card/drink.scss" />
 	<div class="drink-card-image">
-		<include id="<?log(attr.base)?>Drink" src="<?log(attr.img)?>" alt="<?log(attr.alt)?>" />
+		<include id="<?log(attr.base)?>Drink" src="<?log(attr.img)?>" alt="<?log(attr.alt)?>" 
+			<?log(attr.change != undefined ? `change="${attr.change}"` : "")?>
+			/>
 	</div>
 	<p><?log(attr.p)?></p>
 </div>

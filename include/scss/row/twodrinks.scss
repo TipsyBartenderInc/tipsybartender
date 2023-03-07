@@ -10,11 +10,26 @@
 		padding-right: 0.25rem;
 		padding-left: 0.25rem;
 
-		@media screen and (min-width: 560px) {
-			width: 33.33%;
-		}
 		@media screen and (min-width: 860px) {
 			width: 25%;
+		}
+	}
+	@media screen and (min-width: 560px) and (max-width: 859px) {
+		.drink-card {
+			width: 33.33%;
+		}
+
+		&.count3-2 > div:nth-child(n + 7), &.count3-3 > div:nth-child(n + 10), &.count3-4 > div:nth-child(n + 13), &.count3-5 > div:nth-child(n + 16) {
+			display: none;
+		}
+	}
+	@media screen and (min-width: 860px) {
+		.drink-card {
+			width: 25%;
+		}
+
+		&.count4-2 > div:nth-child(n + 9), &.count4-3 > div:nth-child(n + 13), &.count4-4 > div:nth-child(n + 17) {
+			display: none;
 		}
 	}
 }

@@ -1,9 +1,12 @@
 <include src="display/featured.scss" />
-<div class="featured px-2 <? log(attr.classes); ?>">
-	<include src="row/twodrinks.html">
+<div class="featured px-2">
+	<h3>Trending Drinks</h3>
+	<include src="row/twodrinks.html" count3="<? log(Math.floor(template.featured.pages.length / 3)) ?>" count4="<? log(Math.floor(template.featured.pages.length / 4)) ?>">
 		<? for(let a = 0; a < template.featured.pages.length; a++){ const data = template.featured.pages[a]; ?>
 		<include src="card/drink.html" base="<? log(attr.base); ?>Featured<? log(a); ?>"
-			img="<? log(data.image_url); ?>" alt="<? log(data.title); ?> image" p="<? log(data.title); ?>" />
+			img="recipe_img/<? log(data.name) ?>.jpg" alt="<? log(data.title); ?> image" p="<? log(data.title); ?>" 
+			<?log(attr.change != undefined ? `change="${attr.change}"` : "")?>
+			/>
 
 		<? } ?>
 	</include>
