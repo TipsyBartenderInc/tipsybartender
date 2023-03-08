@@ -48,7 +48,7 @@ const liquorTypes = [
 <? for(let a = 0; a < liquorTypes.length; a++) { const data = liquorTypes[a]; ?>
 	<include src="card/drink.html" 
 		base="drinksByLiquor<?log(a)?>" 
-		href="/drinks<? log(data.href) ?>" 
+		href="/recipes<? log(data.href) ?>" 
 		img="drinks_by_liquor/<? log(data.image_url) ?>"
 		alt="<?log(data.title)?> image" 
 		p="<?log(data.title)?>" 

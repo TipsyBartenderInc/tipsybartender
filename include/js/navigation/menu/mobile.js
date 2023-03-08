@@ -13,11 +13,11 @@ function updateNavState(){
 	
 			// Set parameters of expanding nav
 			navMobileMenu.style.display = "block";
-			navMobileMenu.style.top = (navHeight - 1) + "px";
-			navMobileMenu.style.height = (expandableHeight - navHeight + 1) + "px";
+			navMobileMenu.style.top = navHeight + "px";
+			navMobileMenu.style.height = (expandableHeight - navHeight) + "px";
 	
 			// Set spacer height to make up for fixed nav
-			navElement.style.height = navHeight + "px";
+			navElement.style.height = (navHeight + 1) + "px";
 			navPopoutElement.style.position = "fixed";
 	
 			setTimeout(function(){
