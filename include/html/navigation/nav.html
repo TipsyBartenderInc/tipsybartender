@@ -1,23 +1,25 @@
 <include src="navigation/nav.scss" />
 <div id="nav">
-	<div class="wrapper">
-		<div id="navRow" class="row">
-			<a id="navLogoLink" href="/">
-				<div id="navLogo">
-					<include id="navLogoPicture" nobackground src="logo-64.png" alt="Tipsy Bartender logo"/>
-				</div>
-				<div id="navHeader" class="column">Tipsy Bartender</div>
-			</a>
-			<div id="navOptions" class="column">
-				<div class="mobile">
-					<include src="navigation/nav-menu.html" />
-				</div>
-				<div class="row desktop">
-					<a href="/drinks">Drinks</a>
-					<a href="/blogs">Blogs</a>
+	<div class="popout">
+		<div class="wrapper">
+			<div id="navRow" class="row">
+				<a id="navLogoLink" href="/">
+					<div id="navLogo">
+						<include id="navLogoPicture" nobackground src="logo-64.png" alt="Tipsy Bartender logo"/>
+					</div>
+					<div id="navHeader" class="column">Tipsy Bartender</div>
+				</a>
+				<div id="navOptions" class="column">
+					<div class="mobile">
+						<include src="navigation/menu/burger.html" />
+					</div>
+					<div class="row desktop">
+						<a href="/drinks">Drinks</a>
+						<a href="/blogs">Blogs</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<include src="navigation/menu/mobile.html" />
 </div>
-<include src="navigation/menu/mobile.html" />

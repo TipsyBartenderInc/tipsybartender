@@ -8,8 +8,15 @@
 
 	max-width: 1000px;
 
-	.wrapper {
-		background: #3066be;
+	.popout {
+		top: 0;
+		width: 100%;
+		z-index: 9999;
+
+		> .wrapper {
+			background: #3066be;
+			transition: background .3s ease;
+		}
 	}
 
 	#navLogoLink {
@@ -19,7 +26,6 @@
 
 	#navOptions {
 		margin-left: auto;
-		padding: 0 1.5rem;
 
 		a {
 			padding: 1rem;
@@ -27,6 +33,10 @@
 		.desktop {
 			display: none;
 		}
+	}
+
+	&.expanded .popout > .wrapper {
+		background: #44CF6C;
 	}
 
 	@media screen and (min-width: 560px) {
@@ -44,7 +54,7 @@
 		#navOptions {
 			padding: 0 0.5rem;
 			.mobile {
-				display: none;	
+				display: none;
 			}
 			.desktop {
 				display: flex;

@@ -1,7 +1,12 @@
 .navBurger {
-	width: 30px;
-	padding-bottom: 100%;
 	position: relative;
+	padding: 1rem 1.5rem;
+
+	.wrapper {
+		width: 30px;
+		padding-bottom: 100%;
+		position: relative;
+	}
 
 	.lines {
 		position: absolute;
@@ -13,8 +18,9 @@
 		height: 3px;
 		width: 100%;
 
-		&:before, &:after {
-			content: '';
+		&:before,
+		&:after {
+			content: "";
 			position: absolute;
 			left: 0;
 			width: 100%;
@@ -28,5 +34,21 @@
 		&:after {
 			top: 350%;
 		}
+	}
+}
+
+#nav.expanded .lines {
+	background: transparent;
+	
+	&:before,
+	&:after {
+		top: 0;
+	}
+
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
 	}
 }

@@ -1,8 +1,52 @@
-.burgerMenu {
-	position: absolute;
+#navMobileMenu {
+	display: none;
+	position: fixed;
+	padding: 0.25rem 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 10000;
-	background: #ff0000aa;
+	z-index: 9998;
+	color: #fff;
+	font-size: 125%;
+
+	.background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: #3066be;
+
+		transform: translateX(-100%);
+		transition: transform 0.6s ease;
+	}
+
+	.row {
+		opacity: 0;
+		transition: opacity .3s ease;
+	}
+	.row:nth-child(2) {
+		transition-delay: 0.25s;
+	}
+	.row:nth-child(3) {
+		transition-delay: 0.45s;
+	}
+	.row:nth-child(4) {
+		transition-delay: 0.65s;
+	}
+
+	a {
+		padding: 1rem;
+		width: 100%;
+		text-align: center;
+	}
+}
+#nav.expanded #navMobileMenu {
+	.row {
+		opacity: 1;
+	}
+	.background {
+		transform: translateX(0);
+	}
 }
