@@ -1,0 +1,58 @@
+<?
+const liquorTypes = [
+	{
+		"title": "Vodka",
+		"image_url": "vodka.jpg",
+		"href": "/vodka-drinks"
+	},
+	{
+		"title": "Tequila",
+		"image_url": "tequila.jpg",
+		"href": "/tequila-drinks"
+	},
+	{
+		"title": "Rum",
+		"image_url": "rum.jpg",
+		"href": "/rum-drinks"
+	},
+	{
+		"title": "Gin",
+		"image_url": "gin.jpg",
+		"href": "/gin-cocktails"
+	},
+	{
+		"title": "Whiskey",
+		"image_url": "whiskey.jpg",
+		"href": "/all-whiskey-cocktails"
+	},
+	{
+		"title": "Brandy",
+		"image_url": "brandy.jpg",
+		"href": "/brandy-cocktails"
+	},
+	{
+		"title": "Wine",
+		"image_url": "wine.jpg",
+		"href": "/wine-cocktails"
+	},
+	{
+		"title": "All",
+		"image_url": "all.jpg",
+		"href": "/all"
+	}
+];
+?>
+<div class="drinksByLiquor px-3">
+	<h3>Drinks By Liquor</h3>
+<include src="row/twodrinks.html"  count3="<? log(Math.floor(template.holiday.pages.length / 3)) ?>" count4="<? log(Math.floor(template.holiday.pages.length / 4)) ?>">
+<? for(let a = 0; a < liquorTypes.length; a++) { const data = liquorTypes[a]; ?>
+	<include src="card/drink.html" 
+		base="drinksByLiquor<?log(a)?>" 
+		href="/drinks<? log(data.href) ?>" 
+		img="drinks_by_liquor/<? log(data.image_url) ?>"
+		alt="<?log(data.title)?> image" 
+		p="<?log(data.title)?>" 
+		/>
+<? } ?>
+</include>
+</div>

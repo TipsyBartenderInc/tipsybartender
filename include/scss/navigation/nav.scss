@@ -35,8 +35,13 @@
 		}
 	}
 
-	&.expanded .popout > .wrapper {
-		background: #44CF6C;
+	&.expanded {
+		#navHeader {
+			opacity: 0.5;
+		}
+		.popout > .wrapper {
+			background: #44CF6C;
+		}
 	}
 
 	@media screen and (min-width: 560px) {
@@ -69,4 +74,5 @@
 }
 #navHeader {
 	margin-left: 0.5rem;
+	transition: opacity .3s ease;
 }

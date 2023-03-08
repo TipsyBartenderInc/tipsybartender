@@ -1,4 +1,4 @@
-<div class="drink-card">
+<a class="drink-card" href="<? log(attr.href) ?>">
 	<include src="card/drink.scss" />
 	<div class="drink-card-image">
 		<include id="<?log(attr.base)?>Drink" src="<?log(attr.img)?>" alt="<?log(attr.alt)?>" 
@@ -6,4 +6,4 @@
 			/>
 	</div>
 	<p><?log(attr.p)?></p>
-</div>
+</a>
