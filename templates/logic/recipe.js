@@ -206,6 +206,7 @@ module.exports = {
 
 			// Get holiday & recipes
 			let currentHoliday = getCurrentHoliday(currentDate);
+			// currentHoliday = availableHolidays[20];
 			const topRecipes = findMatchingRecipesForTags(templateData.recipe.pages, ruleRecipeTags[currentHoliday.rule]);
 
 			tired.watch.ignoreNext('templates/data/holiday.json');

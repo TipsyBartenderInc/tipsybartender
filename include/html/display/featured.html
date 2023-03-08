@@ -1,5 +1,5 @@
 <include src="display/featured.scss" />
-<div class="featured px-2">
+<div class="featured px-3">
 	<h3>Trending Drinks</h3>
 	<include src="row/twodrinks.html" count3="<? log(Math.floor(template.featured.pages.length / 3)) ?>" count4="<? log(Math.floor(template.featured.pages.length / 4)) ?>">
 		<? for(let a = 0; a < template.featured.pages.length; a++){ const data = template.featured.pages[a]; ?>

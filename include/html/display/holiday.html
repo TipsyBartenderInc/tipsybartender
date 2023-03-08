@@ -1,9 +1,9 @@
-<div class="trending px-2">
+<div class="holiday px-3 pb-3">
 	<h3><?log(template.holiday.name)?> Drinks</h3>
 
 	<include src="row/twodrinks.html"  count3="<? log(Math.floor(template.holiday.pages.length / 3)) ?>" count4="<? log(Math.floor(template.holiday.pages.length / 4)) ?>">
 		<? for(let a = 0; a < template.holiday.pages.length; a++){ const data = template.holiday.pages[a];	 ?>
-			<include src="card/drink.html" base="<?log(attr.base)?>Trending<?log(a)?>" img="recipe_img/<? log(data.name) ?>.jpg"
+			<include src="card/drink.html" base="<?log(attr.base)?>Holiday<?log(a)?>" img="recipe_img/<? log(data.name) ?>.jpg"
 				alt="<?log(data.title)?> image" p="<?log(data.title)?>" 
 				<?log(attr.change != undefined ? `change="${attr.change}"` : "")?>
 				/>
