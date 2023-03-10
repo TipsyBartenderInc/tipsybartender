@@ -1,9 +1,13 @@
 <a class="drink-card" href="<? log(attr.href) ?>">
 	<include src="card/drink.scss" />
-	<div class="drink-card-image">
-		<include id="<?log(attr.base)?>Drink" src="<?log(attr.img)?>" alt="<?log(attr.alt)?>" 
-			<?log(attr.change != undefined ? `change="${attr.change}"` : "")?>
-			/>
+	<div class="wrapper column">
+		<div class="glow"></div>
+		<div class="drink-card-image">
+			<include id="<?log(attr.base)?>Drink" src="<?log(attr.img)?>" alt="<?log(attr.alt)?>" 
+				<?log(attr.change != undefined ? `change="${attr.change}"` : "")?>
+				rgb-parent="wrapper"
+				/>
+		</div>
+		<p><?log(attr.p)?></p>
 	</div>
-	<p><?log(attr.p)?></p>
 </a>

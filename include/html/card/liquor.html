@@ -1,0 +1,19 @@
+
+<div class="liquorTall">
+	<div class="wrapper">
+		<!-- <div class="type">Suggested Playlist</div> -->
+		<div class="label">
+			<div class="color" style="color: #<?log(attr.color)?>;"><?log(attr.label)?></div>
+			<div class="text">Cocktails</div>
+		</div>
+		<a class="button" href="/recipes/<?log(attr.type)?>-drinks">
+			Explore
+			<div class="bg" style="background: #<?log(attr.color)?>; box-shadow: 0 0 10px 2px #<?log(attr.color)?>aa;" ></div>
+		</a>
+		<include 
+		class="liquorTallImage"
+		src="drinks_by_liquor/tall/<?log(attr.type)?>-drinks-tall.jpg"
+		alt="<?log(attr.label)?> liquor category image"
+		/>
+	</div>
+</div>

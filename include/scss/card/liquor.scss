@@ -1,0 +1,115 @@
+.suggestedLiquors {
+	display: flex;
+
+	.liquorTall:nth-child(n + 2) {
+		display: none;
+	}
+}
+
+.liquorTall {
+	font-weight: bold;
+
+	.wrapper {
+		position: relative;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+
+	.type,
+	.label,
+	.button {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		text-align: center;
+		color: #fff;
+	}
+
+	.type {
+		top: 2rem;
+		opacity: 0.6;
+		white-space: nowrap;
+	}
+	.label {
+		font-size: 200%;
+		top: 19%;
+		text-shadow: 1px 1px #00000033;
+
+		.text {
+			opacity: 0.6;
+		}
+	}
+	.button {
+		bottom: 2rem;
+		padding: 1rem 4rem;
+		white-space: nowrap;
+
+		.bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+			opacity: 0.7;
+			border-radius: 4px;
+		}
+	}
+
+	picture {
+		z-index: -1;
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 400px){
+	.suggestedLiquors {
+		.liquorTall {
+			font-size: 70%;
+
+			.type {
+				top: 1rem;
+			}
+			.button {
+				bottom: 1rem;
+				padding: 0.75rem 3rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 559px){
+	.suggestedLiquors {
+		.liquorTall:nth-child(2) {
+			display: block;
+		}
+		.liquorTall:nth-child(1) {
+			padding-right: 1rem;
+		}
+	}
+}
+
+@media screen and (min-width: 560px) and (max-width: 859px){
+	.suggestedLiquors {
+		.liquorTall:nth-child(-n + 3) {
+			display: block;
+		}
+		.liquorTall:nth-child(2) {
+			padding: 0 1rem;
+		}
+	}
+}
+
+@media screen and (min-width: 860px){
+	.suggestedLiquors {
+		.liquorTall:nth-child(-n + 4) {
+			display: block;
+		}
+		.liquorTall:nth-child(2) {
+			padding: 0 1rem;
+		}
+		.liquorTall:nth-child(3) {
+			padding-right: 1rem;
+		}
+	}
+}

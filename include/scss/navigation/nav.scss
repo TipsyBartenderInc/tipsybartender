@@ -7,16 +7,15 @@
 
 	max-width: 1000px;
 
-	border-bottom: 1px solid #f6f6f6;
-
 	.popout {
 		top: 0;
 		width: 100%;
 		z-index: 9999;
 
 		> .wrapper {
-			box-shadow: 0 0 20px 0 #3066be33;
-			background: #fff;
+			background: #111;
+			border-bottom: 1px solid #f6f6f6;
+			box-shadow: 0 0 20px 0 #00A8FF55;
 			transition: background .3s ease;
 		}
 	}
@@ -49,13 +48,13 @@
 	@media screen and (min-width: 560px) {
 		margin-bottom: 1rem;
 		padding: 1rem;
-		border-bottom: none;
 
 		#navRow {
 			justify-content: left;
 		}
 
 		.wrapper {
+			border-bottom: none !important;
 			border-radius: 10px;
 			box-shadow: 0 0 20px 0 #3066be33;
 		}

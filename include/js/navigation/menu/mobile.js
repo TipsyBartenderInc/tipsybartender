@@ -17,7 +17,7 @@ function updateNavState(){
 			navMobileMenu.style.height = (expandableHeight - navHeight) + "px";
 	
 			// Set spacer height to make up for fixed nav
-			navElement.style.height = (navHeight + 1) + "px";
+			navElement.style.height = navHeight + "px";
 			navPopoutElement.style.position = "fixed";
 	
 			setTimeout(function(){
