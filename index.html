@@ -2,10 +2,17 @@
 <include src="page/index.scss" />
 <include src="navigation/nav.html" />
 
+<include src="3rdparty/google-analytics.html" />
+
 <div id="pageContent">
 	<include src="display/suggestion/liquors.html" type="vodka" />
-	<include src="display/holiday.html" base="home" classes="pb-3" change="560,860"/>
+	<include src="3rdparty/banner.html" class="px-3 pt-3 pb-4" />
+
+	<include src="display/holiday.html" base="home" change="560,860"/>
+	<include src="3rdparty/banner.html" class="px-3 pb-4" />
+	
 	<include src="display/drinks-by-liquor.html" />
+	<include src="3rdparty/banner.html" class="px-3 pb-4" />
 </div>
 
 <include src="navigation/social-icons.html" base="home" />

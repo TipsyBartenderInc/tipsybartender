@@ -1,6 +1,9 @@
-* {
+body {
+	background: #fff;
+	color: #000;
 	font-family: Montserrat, Verdana, Helvetica, Arial, sans-serif;
 }
+p,
 .font-content {
 	font-family: Helvetica, sans-serif;
 	letter-spacing: 0.02em;
@@ -38,4 +41,44 @@
 }
 .pb-2 {
 	padding-bottom: 0.5rem;
+}
+
+.pt-4 {
+	padding-top: 2rem;
+}
+.pt-3 {
+	padding-top: 1rem;
+}
+
+.py-3 {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.py-4 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.fw-200 {
+	font-weight: 200;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.banner {
+	width: 100%;
+	background: #00000033;
+
+	&.banner-100 {
+		padding-bottom: 100px;
+	}
+	&.banner-sq {
+		padding-bottom: 100%;
+	}
 }

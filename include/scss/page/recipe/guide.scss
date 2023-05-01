@@ -1,0 +1,88 @@
+.guide-section {
+	padding-bottom: 2rem;
+
+	> * {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	.section-title {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		position: relative;
+		color: #fff;
+		margin: 0 1rem 1rem 1rem;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #00A8FF;
+			z-index: -1;
+		}
+	}
+
+	.item {
+		background: #f6f6f6;
+		padding: 1rem;
+		margin-bottom: 1rem;
+
+		.amount {
+			margin-top: 0.25rem;
+			color: #00a8ff;
+			font-weight: 700;
+		}
+	}
+
+	.steps {
+		margin: 1.5rem 1rem 0 1rem;
+	}
+	.step {
+		display: flex;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+
+		.number {
+			color: #1fb2fe;
+			padding-right: 1.5rem;
+			font-weight: 700;
+		}
+		.text {
+			font-weight: 200;
+		}
+
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #1fb2fe22;
+		}
+		&:last-child:after {
+			display: none;
+		}
+	}
+
+	.section-title,
+	.text,
+	.number {
+		font-size: 125%;
+	}
+}
+
+
+.gear-section .section-title:after {
+	background: #00BA33;
+}
+.preparation-section .section-title:after {
+	background: #FF1930;
+}
+
+.more-section .text {
+	line-height: 1.5;
+}

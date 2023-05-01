@@ -1,8 +1,11 @@
-<div class="holiday px-3 pb-3">
+<div class="holiday px-3">
 	<h3><?log(template.holiday.name)?> Drinks</h3>
 
 	<include src="row/twodrinks.html"  count3="<? log(Math.floor(template.holiday.pages.length / 3)) ?>" count4="<? log(Math.floor(template.holiday.pages.length / 4)) ?>">
 		<? for(let a = 0; a < template.holiday.pages.length; a++){ const data = template.holiday.pages[a];	 ?>
+			<? if(a != 0 && a % 4 === 0){ ?>
+				<include src="3rdparty/banner.html" class="w-100 px-2 pb-4" />
+			<? } ?>
 			<include src="card/drink.html" 
 				base="<?log(attr.base)?>Holiday<?log(a)?>" 
 				href="/recipe/<? log(data.name) ?>" 

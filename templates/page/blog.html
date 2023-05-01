@@ -1,0 +1,28 @@
+<include src="global.scss" />
+<include src="navigation/nav.html" />
+<include src="page/blog/content.scss" />
+<include src="page/text/page.scss" />
+
+<div class="page-content">
+	<!-- https://tipsy-web.b-cdn.net/wp-content/uploads/2017/10/RainbowSangriaThumb.jpg -->
+	<!-- https://tipsy-web.b-cdn.net -->
+	<h1 class="px-3">From the Bahama Mama to the Painkiller, Shake It Up This Summer with These Bahamian-Inspired Drinks
+	</h1>
+	<div id="blogContent" class="px-3">
+		<? log(attr.listicle_intro); ?>
+	</div>
+	<div id="blogList px-3">
+		<include src="page/blog/listicle.scss" />
+		<?
+		const entries = attr.entries;
+		for(let a = 0; a < entries.length; a++){ const entry = entries[a]; ?>
+		<include src="blog/listicle-item.html" 
+		index="<? log(attr.is_numbered_list ? a + 1 : ""); ?>" 
+		title="<? log(entry.title); ?>"
+			url="<? log(entry.url); ?>" content="<? log(entry.content); ?>" image="<? log(entry.image.url); ?>" />
+		<? }?>
+	</div>
+</div>
+
+<include src="navigation/social-icons.html" base="footer" />
+<include src="navigation/footer.html" />

@@ -196,7 +196,7 @@ function findMatchingRecipesForTags(pages, tags, limit = 16, rowLength = 4) {
 const fs = require('fs');
 let lastUpdate = 0;
 module.exports = {
-	limit: 10,
+	limit: 5,
 	init: async function (templateData) {
 		// If it's been at least 10 minutes since the last update, update the holidays
 		const currentDate = new Date();

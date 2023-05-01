@@ -2,13 +2,14 @@
 	display: flex;
 
 	.liquorTall:nth-child(n + 2) {
-		display: none;
+		// display: none;
 	}
 }
 
 .liquorTall {
 	flex: 1;
 	font-weight: bold;
+	font-size: 70%;
 
 	.wrapper {
 		position: relative;
@@ -28,7 +29,7 @@
 	}
 
 	.type {
-		top: 2rem;
+		top: 1rem;
 		opacity: 0.6;
 		white-space: nowrap;
 	}
@@ -42,8 +43,8 @@
 		}
 	}
 	.button {
-		bottom: 2rem;
-		padding: 1rem 4rem;
+		bottom: 1rem;
+		padding: 0.75rem 3rem;
 		white-space: nowrap;
 
 		.bg {
@@ -68,54 +69,48 @@
 	}
 }
 
-@media screen and (min-width: 400px){
-	.suggestedLiquors {
-		.liquorTall {
-			font-size: 70%;
+// @media screen and (min-width: 360px){
+// 	.suggestedLiquors {
+// 		.liquorTall {
+// 			font-size: 70%;
 
-			.type {
-				top: 1rem;
-			}
-			.button {
-				bottom: 1rem;
-				padding: 0.75rem 3rem;
-			}
-		}
-	}
-}
+// 			.type {
+// 				top: 1rem;
+// 			}
+// 			.button {
+// 				bottom: 1rem;
+// 				padding: 0.75rem 3rem;
+// 			}
+// 		}
+// 	}
+// }
 
-@media screen and (min-width: 400px) and (max-width: 559px){
-	.suggestedLiquors {
-		.liquorTall:nth-child(2) {
-			display: block;
-		}
-		.liquorTall:nth-child(1) {
-			padding-right: 1rem;
-		}
-	}
-}
+// @media screen and (min-width: 360px) and (max-width: 559px){
+// 	.suggestedLiquors {
+// 		.liquorTall:nth-child(2) {
+// 			display: block;
+// 		}
+// 	}
+// }
 
-@media screen and (min-width: 560px) and (max-width: 859px){
-	.suggestedLiquors {
-		.liquorTall:nth-child(-n + 3) {
-			display: block;
-		}
-		.liquorTall:nth-child(2) {
-			padding: 0 1rem;
-		}
-	}
-}
+// @media screen and (min-width: 560px) and (max-width: 859px){
+// 	.suggestedLiquors {
+// 		.liquorTall:nth-child(-n + 3) {
+// 			display: block;
+// 		}
+// 		.liquorTall:nth-child(2) {
+// 			padding: 0 1rem;
+// 		}
+// 	}
+// }
 
-@media screen and (min-width: 860px){
-	.suggestedLiquors {
-		.liquorTall:nth-child(-n + 4) {
-			display: block;
-		}
-		.liquorTall:nth-child(2) {
-			padding: 0 1rem;
-		}
-		.liquorTall:nth-child(3) {
-			padding-right: 1rem;
-		}
-	}
-}
+// @media screen and (min-width: 860px){
+// 	.suggestedLiquors {
+// 		.liquorTall:nth-child(-n + 4) {
+// 			display: block;
+// 		}
+// 		.liquorTall:nth-child(2) {
+// 			padding: 0 1rem;
+// 		}
+// 	}
+// }

@@ -1,0 +1,18 @@
+<div class="carousel">
+	<div class="wrapper" style="width:<? log(attr.width) ?>px">
+
+	</div>
+	<div class="controls">
+		<div class="indicators">
+			<? for(let a = 0; a < attr.items; a++){ ?>
+				<div></div>
+			<? } ?>
+		</div>
+		<div class="buttons pointer noselect">
+			<div class="left"><span><</span></div>
+			<div class="right"><span>></span></div>
+		</div>
+	</div>
+</div>
+<include src="navigation/menu/carousel.scss" />
+<include lazy src="navigation/menu/carousel.js" />

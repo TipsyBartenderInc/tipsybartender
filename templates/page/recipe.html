@@ -1,16 +1,97 @@
-<h1>Recipe: <?log(attr.title)?></h1>
-<p><?log(attr.content)?></p>
-<p><?log(attr.excerpt)?></p>
-<p><?log(attr.video_url)?></p>
-<p><?log(attr.video_poster_image)?></p>
-<p><?log(attr.intro)?></p>
-<p><?log(attr.more_info)?></p>
-<p><?log(attr.prep_time)?></p>
-<p><?log(attr.video_keywords)?></p>
-<p><?log(attr.video_duration)?></p>
-<p><?log(attr.preparation)?></p>
-<p><?log(attr.ingredients)?></p>
-<p><?log(attr.gear)?></p>
-<p><?log(attr.contributor)?></p>
-<p><?log(attr.brand_safe)?></p>
-<p><?log(attr.promo_tags)?></p>
+<include src="global.scss" />
+<include src="page/recipe.scss" />
+<include src="page/text/page.scss" />
+<include src="page/recipe/guide.scss" />
+<include src="navigation/nav.html" />
+
+<div class="page-content">
+	<div class="intro-section px-3 pb-4 pt-3">
+		<h1>
+			<?log(attr.title)?>
+		</h1>
+		<p class="font-content">
+			<?log(attr.oneLiner)?>
+		</p>
+	</div>
+	<div class="video-section">
+		<!-- <include version="1.0.0" src="https://tipsy-web.b-cdn.net/thumbnails/<?log(attr.youtube_id)?>.jpg" /> -->
+		<div class="video" style="box-shadow: 0 0 20px 0 <?log(attr.imagePalette.Vibrant.hex)?>99">
+			<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aYG6HstET-M?controls=0"
+				title="YouTube video player" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+		</div>
+	</div>
+	<include src="3rdparty/banner.html" />
+	<div class="guide-section ingredients-section pt-4">
+		<h3 class="section-title">What You'll Need</h3>
+		<div class="items">
+			<?
+			for(const item of attr.ingredients) { ?>
+			<div class="item <? log(item.amt === undefined ? "" : " amt"); ?>">
+				<div class="text">
+					<? log(item.label); ?>
+				</div>
+				<? if(item.amt) { ?>
+				<div class="amount">
+					<? log(item.amt + " " + item.unit); ?>
+				</div>
+				<? } ?>
+			</div>
+			<? } ?>
+		</div>
+	</div>
+	<div class="guide-section gear-section">
+		<h3 class="section-title">Gear</h3>
+		<div class="items">
+			<?
+			const gear = ["Basic Bar Tools"];
+			for(const item of gear) { ?>
+			<div class="item">
+				<div class="text">
+					<? log(item); ?>
+				</div>
+			</div>
+			<? } ?>
+		</div>
+	</div>
+	<? if(attr.prep != undefined) { ?>
+	<include src="3rdparty/banner.html" />
+	<div class="guide-section preparation-section pt-4">
+		<h3 class="section-title">Preparation</h3>
+		<div class="steps font-content">
+			<? for(let a = 0; a < attr.prep.length; a++) { const item = attr.prep[a]; ?>
+			<div class="step">
+				<div class="number">
+					<? log(a + 1); ?>
+				</div>
+				<div class="text">
+					<? log(item); ?>
+				</div>
+			</div>
+			<? } ?>
+		</div>
+	</div>
+	<? } ?>
+
+	<div class="px-3">
+		<include id="drinkResponsibly" class="pb-4" src="banners/drink-responsibly/1.jpg"
+			alt="drink responsibly banner" />
+	</div>
+
+	<include src="3rdparty/banner.html" />
+
+	<div class="guide-section more-section pt-4">
+		<h3 class="section-title">More About This Drink</h3>
+		<div class="text font-content fw-200">Before we dive into why that’s the case, here are some other sambuca
+			cocktails you may enjoy: the Double Sambuca Bomb, the Absinthe with Leave, the Chuck Norris Roundhouse Kick
+			to the Face Shot, the Jelly Fish, the Flatliner Shot, and the Hiroshima Shot. In terms of where this Blue
+			Jelly Fish comes from, it’s hard to say. The Blue Jellyfish cocktail recipe went viral on the internet at
+			some point, and now all we...</div>
+	</div>
+
+	<include src="3rdparty/banner.html" />
+</div>
+
+<div class="py-3"></div>
+
+<include src="navigation/social-icons.html" base="footer" />
+<include src="navigation/footer.html" />
