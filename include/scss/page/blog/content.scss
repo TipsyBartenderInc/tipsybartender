@@ -1,16 +1,20 @@
 #blogContent {
-	> * {
+	* {
 		margin-bottom: 1rem;
+		font-family: Helvetica, sans-serif;
+		line-height: 1.5;
+		letter-spacing: 0.02em;
+	}
+
+	span {
+		display: block;
 	}
 	
 	h2 {
 		margin-top: 2rem;
 	}
 
-	p {
-		font-family: Helvetica, sans-serif;
+	span, p {
 		font-weight: 200;
-		letter-spacing: 0.02em;
-		line-height: 1.5;
 	}
 }

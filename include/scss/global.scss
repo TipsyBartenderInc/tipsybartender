@@ -18,9 +18,12 @@ p,
 	flex-direction: row;
 	justify-content: center;
 }
+.d-flex {
+	display: flex;
+}
 
 #pageContent {
-	max-width: 1000px;
+	max-width: 960px;
 	margin: 1.5rem auto;
 }
 
@@ -81,4 +84,10 @@ p,
 	&.banner-sq {
 		padding-bottom: 100%;
 	}
+}
+
+
+h3.standard {
+	padding-bottom: 1rem;
+	font-size: 150%;
 }

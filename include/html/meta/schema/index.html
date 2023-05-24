@@ -1,0 +1,36 @@
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": "https://tipsybartender.com/#website",
+			"url": "https://tipsybartender.com/",
+			"name": "<?log(attr.title);?>",
+			"description": "<?log(attr.description);?>",
+			"inLanguage": "en-US"
+		},
+		{
+			"@type": "WebPage",
+			"@id": "https://tipsybartender.com/#webpage",
+			"url": "https://tipsybartender.com/",
+			"name": "<?log(attr.title);?>",
+			"isPartOf": {
+				"@id": "https://tipsybartender.com/#website"
+			},
+			"datePublished": "2017-11-10T01:58:55+00:00",
+			"dateModified": "<?log(new Date().toISOString());?>",
+			"description": "<?log(attr.description);?>",
+			"inLanguage": "en-US",
+			"potentialAction": [
+				{
+					"@type": "ReadAction",
+					"target": [
+						"https://tipsybartender.com/"
+					]
+				}
+			]
+		}
+	]
+}
+</script>

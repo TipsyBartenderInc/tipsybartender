@@ -31,12 +31,77 @@ const schema = [
 	},
 	{
 		"@context": "https://schema.org",
-		"@type": "WebSite",
-		"url": "https://tipsybartender.com/",
-		"potentialAction": {
-			"@type": "SearchAction",
-			"target": "https://tipsybartender.com/?s={search_term_string}&post_type=recipe",
-			"query-input": "required name=search_term_string"
-		}
+		"@graph": [
+			{
+				"@type": "WebSite",
+				"@id": "https://tipsybartender.com/#website",
+				"url": "https://tipsybartender.com/",
+				"name": "Tipsy Bartender",
+				"description": "Whether you are looking for an epic jungle juice recipe for your next party or a tasty new mimosa to brighten up brunch, you have come to the right place! We have awesome cocktails and alcohol-infused treats that will be sure to make your party a hit. View our delicious recipes here!",
+				"inLanguage": "en-US"
+			},
+			{
+				"@type": "WebPage",
+				"@id": "https://tipsybartender.com/#webpage",
+				"url": "https://tipsybartender.com/",
+				"name": "Awesome Cocktails & Alcohol Infused Treats | Tipsy Bartender",
+				"isPartOf": {
+					"@id": "https://tipsybartender.com/#website"
+				},
+				"datePublished": "2017-11-10T01:58:55+00:00",
+				"dateModified": "2021-07-12T20:49:44+00:00",
+				"description": "Whether you are looking for an epic jungle juice recipe for your next party or a tasty new mimosa to brighten up brunch, you have come to the right place! We have awesome cocktails and alcohol-infused treats that will be sure to make your party a hit. View our delicious recipes here!",
+				"inLanguage": "en-US",
+				"potentialAction": [
+					{
+						"@type": "ReadAction",
+						"target": [
+							"https://tipsybartender.com/"
+						]
+					}
+				]
+			}
+		]
 	}
 ]
+const websiteWithSearchSchema = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": "https://tipsybartender.com/#website",
+			"url": "https://tipsybartender.com/",
+			"name": "Tipsy Bartender",
+			"description": "Whether you are looking for an epic jungle juice recipe for your next party or a tasty new mimosa to brighten up brunch, you have come to the right place! We have awesome cocktails and alcohol-infused treats that will be sure to make your party a hit. View our delicious recipes here!",
+			"potentialAction": [
+				{
+					"@type": "SearchAction",
+					"target": "https://tipsybartender.com/?s={search_term_string}",
+					"query-input": "required name=search_term_string"
+				}
+			],
+			"inLanguage": "en-US"
+		},
+		{
+			"@type": "WebPage",
+			"@id": "https://tipsybartender.com/#webpage",
+			"url": "https://tipsybartender.com/",
+			"name": "Awesome Cocktails & Alcohol Infused Treats | Tipsy Bartender",
+			"isPartOf": {
+				"@id": "https://tipsybartender.com/#website"
+			},
+			"datePublished": "2017-11-10T01:58:55+00:00",
+			"dateModified": "2021-07-12T20:49:44+00:00",
+			"description": "Whether you are looking for an epic jungle juice recipe for your next party or a tasty new mimosa to brighten up brunch, you have come to the right place! We have awesome cocktails and alcohol-infused treats that will be sure to make your party a hit. View our delicious recipes here!",
+			"inLanguage": "en-US",
+			"potentialAction": [
+				{
+					"@type": "ReadAction",
+					"target": [
+						"https://tipsybartender.com/"
+					]
+				}
+			]
+		}
+	]
+}

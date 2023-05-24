@@ -1,5 +1,5 @@
-.page-content {
-	max-width: 1000px;
+.page-content, .page-max {
+	max-width: 960px;
 	margin: 0 auto;
 }
 
@@ -10,4 +10,35 @@ h1 {
 .intro-section p {
 	font-weight: 200;
 	color: #131313;
+}
+
+
+.page-content {
+	> * {
+		margin-bottom: 1rem;
+	}
+	* {
+		font-family: Helvetica, sans-serif;
+		line-height: 1.5;
+		letter-spacing: 0.02em;
+	}
+	
+	span {
+		display: block;
+	}
+	
+	h2 {
+		margin-top: 2rem;
+	}
+	
+	span, p {
+		font-weight: 200 !important;
+	}
+}
+
+@media screen and (min-width: 560px) {
+	.page-max, .page-content {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 }

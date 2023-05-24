@@ -1,0 +1,18 @@
+<? attr.linkTree = JSON.parse(attr.linkTree) ?>
+<? attr.linkTree.unshift({ name: "all", title: "All Drinks" }); ?>
+<div class="breadcrumbs">
+	<? for(let a = 0; a < attr.linkTree.length; a++){ ?>
+		<? let link = attr.linkTree[a]; ?>
+		<? let lastItem = a === attr.linkTree.length - 1; ?>
+		<div class="breadcrumb <? log(lastItem ? "current" : ""); ?>">
+			<a href="/drinks/<? log(link.name); ?>" class="column">
+				<div><? log(link.title); ?></div>
+			</a>
+		</div>
+		<? if(!lastItem){ ?>
+		<div class="breadcrumb-separator column">
+			<div class="arrow right"></div>
+		</div>
+		<? } ?>
+	<? } ?>
+</div>

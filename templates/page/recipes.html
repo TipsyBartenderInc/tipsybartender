@@ -1,0 +1,131 @@
+<include src="global.scss" />
+<include src="navigation/nav.html" />
+<include src="page/blog/content.scss" />
+<include src="page/text/page.scss" />
+
+<include src="page/recipes/header.scss" />
+<include src="page/recipes/carousel.scss" />
+
+<?
+	const hasSubcollections = attr.loadedSubcollections != undefined && 0 < attr.loadedSubcollections.length;
+	const hasDrinks = attr.loadedDrinks != undefined && 0 < attr.loadedDrinks.length;
+?>
+
+<div class="">
+	<div class="page-max">
+		<div class="header">
+			<include src="drinks/breadcrumbs.html" 
+			linkTree='<? log(JSON.stringify(attr.linkTree)) ?>'
+			/>
+			<div id="headerContent">
+				<div class="left column">
+					<div class="image">
+						<include src="<? log(attr.image_url); ?>" alt="<?log(attr.title)?> image" />
+					</div>
+				</div>
+				<div class="right column">
+					<h1>
+						<? log(attr.title); ?>
+					</h1>
+					<p id="desktopDescription"><? log(attr.oneLiner); ?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="page-content">
+		<p id="description" class="px-3"><? log(attr.oneLiner); ?></p>
+	</div>
+	<div class="page-max">
+		<include src="3rdparty/banner.html" class="px-3 pt-3 pb-4" />
+		
+		<? if(hasSubcollections && hasDrinks){ ?>
+			<div class="px-3">
+				<h2 class="pb-3">Related Playlists</h2>
+				<? const halfSubcollectionLength = Math.floor(attr.loadedSubcollections.length / 2); ?>
+				<include src="display/component/carousel.html" width=160 items=<? log(halfSubcollectionLength); ?> indicator="false" controlMargin="1rem 0 0">
+					<div class="d-flex">
+						<? for(let a = 0; a < halfSubcollectionLength; a++){ ?>
+								<? const index = a * 2; ?>
+								<? const data = attr.loadedSubcollections[index]; ?>
+								<include src="card/drink.html" 
+									base="recipesSubcollection<?log(index)?>" 
+									href="/recipes/<? log(data.name) ?>" 
+									img="<? log(data.image_url) ?>"
+									alt="<?log(data.title)?> image" 
+									p="<?log(data.title)?>" 
+									/>
+						<? } ?>
+					</div>
+					<div class="d-flex">
+						<? for(let a = 0; a < halfSubcollectionLength; a++){ ?>
+								<? const index = a * 2 + 1; ?>
+								<? if(attr.loadedSubcollections.length <= index) continue; ?>
+								<? const data = attr.loadedSubcollections[index]; ?>
+								<include src="card/drink.html" 
+									base="recipesSubcollection<?log(index)?>" 
+									href="/recipes/<? log(data.name) ?>" 
+									img="<? log(data.image_url) ?>"
+									alt="<?log(data.title)?> image" 
+									p="<?log(data.title)?>" 
+									/>
+						<? } ?>
+					</div>
+				</include>
+			</div>
+			<include src="3rdparty/banner.html" class="px-3 pt-3 pb-4" />
+		<? } ?>
+	</div>
+	<div class="page-max">
+		<div class="px-3">
+			<? if(hasDrinks){ ?>
+				<h2 class="pb-3">Recipes</h2>
+				<!-- Drink cards -->
+				<include src="row/twodrinks.html"  count3="<? log(Math.floor(attr.loadedDrinks.length / 3)) ?>" count4="<? log(Math.floor(attr.loadedDrinks.length / 4)) ?>">
+					<? for(let a = 0; a < attr.loadedDrinks.length; a++){ const data = attr.loadedDrinks[a];	 ?>
+						<? if(a != 0 && a % 4 === 0){ ?>
+							<include src="3rdparty/banner.html" class="w-100 px-2 pb-4" />
+						<? } ?>
+						<include src="card/drink.html" 
+							base="recipesDrink<?log(a)?>" 
+							href="/recipe/<? log(data.name) ?>" 
+							img="recipe_img/<? log(data.name) ?>.jpg"
+							alt="<?log(data.title)?> image" 
+							p="<?log(data.title)?>" 
+							<?log(attr.change != undefined ? `change="${attr.change}"` : "")?>
+							/>
+					<? } ?>
+				</include>
+			<? } else { ?>
+				<h2 class="pb-3">Related Playlists</h2>
+				<!-- Subcollection cards -->
+				<include src="row/twodrinks.html"  count3="<? log(Math.floor(attr.loadedSubcollections.length / 3)) ?>" count4="<? log(Math.floor(attr.loadedSubcollections.length / 4)) ?>">
+					<? for(let a = 0; a < attr.loadedSubcollections.length; a++){ const data = attr.loadedSubcollections[a];	 ?>
+						<? if(a != 0 && a % 4 === 0){ ?>
+							<include src="3rdparty/banner.html" class="w-100 px-2 pb-4" />
+						<? } ?>
+						<include src="card/drink.html" 
+							base="recipesSubcollection<?log(a)?>" 
+							href="/recipes/<? log(data.name) ?>" 
+							img="<? log(data.image_url) ?>"
+							alt="<?log(data.title)?> image" 
+							p="<?log(data.title)?>" 
+							<?log(attr.change != undefined ? `change="${attr.change}"` : "")?>
+							/>
+					<? } ?>
+				</include>
+			<? } ?>
+		</div>
+	</div>
+	<div class="page-content ">
+		<? if(2 < attr.loadedDrinks.length % 4) { ?>
+			<include src="3rdparty/banner.html" class="w-100 px-3 pb-4" />
+		<? } ?>
+
+		<div class="px-3"><? log(attr.content); ?></div>
+
+		<include src="3rdparty/banner.html" class="px-3 pt-3 pb-4" />
+	</div>
+</div>
+
+<include src="navigation/social-icons.html" base="footer" />
+<include src="navigation/footer.html" />

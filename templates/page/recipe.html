@@ -4,8 +4,24 @@
 <include src="page/recipe/guide.scss" />
 <include src="navigation/nav.html" />
 
+<div class="page-max">
+	<div class="video-section">
+		<div id="recipeVideo" data-id="<?log(attr.youtube_id);?>" class="video pointer"
+			style="box-shadow: 0 0 20px 0 <?log(attr.imagePalette.Vibrant.hex)?>99">
+			<include class="thumbnail" version="1.0.0" src="https://tipsy-web.b-cdn.net/thumbnails/<?log(attr.youtube_id)?>.jpg" />
+			<div id="ytplayer"></div>
+			<div class="play-button">
+				<div class="triangle"></div>
+				<div class="text">Play</div>
+			</div>
+			<div class="loading">Loading video...</div>
+		</div>
+
+		<include src="page/recipe.js" />
+	</div>
+</div>
 <div class="page-content">
-	<div class="intro-section px-3 pb-4 pt-3">
+	<div class="intro-section px-3 pb-3">
 		<h1>
 			<?log(attr.title)?>
 		</h1>
@@ -13,14 +29,7 @@
 			<?log(attr.oneLiner)?>
 		</p>
 	</div>
-	<div class="video-section">
-		<!-- <include version="1.0.0" src="https://tipsy-web.b-cdn.net/thumbnails/<?log(attr.youtube_id)?>.jpg" /> -->
-		<div class="video" style="box-shadow: 0 0 20px 0 <?log(attr.imagePalette.Vibrant.hex)?>99">
-			<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aYG6HstET-M?controls=0"
-				title="YouTube video player" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
-		</div>
-	</div>
-	<include src="3rdparty/banner.html" />
+	<include src="3rdparty/banner.html" class="px-3" />
 	<div class="guide-section ingredients-section pt-4">
 		<h3 class="section-title">What You'll Need</h3>
 		<div class="items">
@@ -43,8 +52,7 @@
 		<h3 class="section-title">Gear</h3>
 		<div class="items">
 			<?
-			const gear = ["Basic Bar Tools"];
-			for(const item of gear) { ?>
+			for(const item of attr.gear) { ?>
 			<div class="item">
 				<div class="text">
 					<? log(item); ?>
@@ -54,7 +62,7 @@
 		</div>
 	</div>
 	<? if(attr.prep != undefined) { ?>
-	<include src="3rdparty/banner.html" />
+	<include src="3rdparty/banner.html" class="px-3" />
 	<div class="guide-section preparation-section pt-4">
 		<h3 class="section-title">Preparation</h3>
 		<div class="steps font-content">
@@ -77,18 +85,23 @@
 			alt="drink responsibly banner" />
 	</div>
 
-	<include src="3rdparty/banner.html" />
+	<include src="3rdparty/banner.html" class="px-3" />
 
 	<div class="guide-section more-section pt-4">
 		<h3 class="section-title">More About This Drink</h3>
-		<div class="text font-content fw-200">Before we dive into why that’s the case, here are some other sambuca
-			cocktails you may enjoy: the Double Sambuca Bomb, the Absinthe with Leave, the Chuck Norris Roundhouse Kick
-			to the Face Shot, the Jelly Fish, the Flatliner Shot, and the Hiroshima Shot. In terms of where this Blue
-			Jelly Fish comes from, it’s hard to say. The Blue Jellyfish cocktail recipe went viral on the internet at
-			some point, and now all we...</div>
+		<div class="text font-content fw-200">
+			<? log(attr.content); ?>
+		</div>
 	</div>
 
-	<include src="3rdparty/banner.html" />
+
+	<include src="display/holiday.html" limit=12 base="home" change="560,860" />
+
+	<include src="3rdparty/banner.html" class="px-3 pb-4" />
+		
+	<include src="display/drinks-by-liquor.html" />
+
+	<include src="3rdparty/banner.html" class="px-3" />
 </div>
 
 <div class="py-3"></div>

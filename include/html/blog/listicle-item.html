@@ -1,10 +1,18 @@
 <a class="listicle-item px-3" href="<? log(attr.url); ?>">
-	<h3 class="title">
+	<h3 class="title mobile">
 		<div class="number"><span><? log(attr.index); ?></span></div>
 		<div class="text"><? log(attr.title); ?></div>
 	</h3>
-	<? if(attr.image != undefined){ ?><div class="image"><? log(attr.image); ?></div><? } ?>
-	<div class="content">
-		<? log(attr.content); ?>
+	<div class="left">
+		<? if(attr.image != undefined){ ?><div class="image"><include src="https://tipsy-web.b-cdn.net/<? log(attr.image); ?>" /></div><? } ?>
+	</div>
+	<div class="right">
+		<h3 class="title desktop pb-3">
+			<div class="number"><span><? log(attr.index); ?></span></div>
+			<div class="text"><? log(attr.title); ?></div>
+		</h3>
+		<div class="content">
+			<? log(attr.content); ?>
+		</div>
 	</div>
 </div>

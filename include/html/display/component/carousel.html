@@ -1,13 +1,15 @@
-<div class="carousel">
-	<div class="wrapper" style="width:<? log(attr.width) ?>px">
+<div class="carousel" data-items="<? log(attr.items); ?>" data-width="<? log(attr.width); ?>">
+	<div class="carousel-wrapper" style="width:<? log(attr.items * attr.width) ?>px">
 
 	</div>
-	<div class="controls">
+	<div class="controls" style="<? if(attr.controlMargin != undefined) log("margin:" + attr.controlMargin); ?>">
+		<? if(attr.indicator != "false"){ ?>
 		<div class="indicators">
 			<? for(let a = 0; a < attr.items; a++){ ?>
 				<div></div>
 			<? } ?>
 		</div>
+		<? } ?>
 		<div class="buttons pointer noselect">
 			<div class="left"><span><</span></div>
 			<div class="right"><span>></span></div>

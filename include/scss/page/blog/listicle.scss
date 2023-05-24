@@ -1,9 +1,13 @@
 .listicle-item {
 	display: block;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 
 	.title {
 		display: flex;
+
+		&.desktop {
+			display: none;
+		}
 
 		.number {
 			position: relative;
@@ -31,5 +35,38 @@
 	.content p {
 		font-weight: 200;
 		line-height: 1.5;
+	}
+
+	.image {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+
+	@media screen and (min-width: 700px){
+		display: flex;
+
+		.left {
+			margin-right: 2rem;
+			max-width: 200px;
+
+			.image {
+				width: 200px;
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+		.right {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.title.mobile {
+			display: none;
+		}
+		.title.desktop {
+			display: flex;
+		}
 	}
 }

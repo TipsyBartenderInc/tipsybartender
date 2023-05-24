@@ -3,47 +3,47 @@ const liquorTypes = [
 	{
 		"title": "Vodka",
 		"image_url": "vodka.jpg",
-		"href": "/vodka-drinks"
+		"href": "/recipes/vodka-cocktails"
 	},
 	{
 		"title": "Tequila",
 		"image_url": "tequila.jpg",
-		"href": "/tequila-drinks"
+		"href": "/recipes/tequila-cocktails"
 	},
 	{
 		"title": "Rum",
 		"image_url": "rum.jpg",
-		"href": "/rum-drinks"
+		"href": "/recipes/rum-cocktails"
 	},
 	{
 		"title": "Gin",
 		"image_url": "gin.jpg",
-		"href": "/gin-cocktails"
+		"href": "/recipes/gin-drinks"
 	},
 	{
 		"title": "Whiskey",
 		"image_url": "whiskey.jpg",
-		"href": "/all-whiskey-cocktails"
+		"href": "/recipes/whiskey-drinks"
 	},
 	{
 		"title": "Brandy",
 		"image_url": "brandy.jpg",
-		"href": "/brandy-cocktails"
+		"href": "/recipes/brandy-cocktails"
 	},
 	{
 		"title": "Wine",
 		"image_url": "wine.jpg",
-		"href": "/wine-cocktails"
+		"href": "/recipes/wine-cocktails"
 	},
 	{
 		"title": "All",
 		"image_url": "all.jpg",
-		"href": "/all"
+		"href": "/recipes/all"
 	}
 ];
 ?>
 <div class="drinksByLiquor px-3">
-	<h3>Drinks By Liquor</h3>
+	<h3 class="standard">Drinks By Liquor</h3>
 <include src="row/twodrinks.html"  count3="<? log(Math.floor(template.holiday.pages.length / 3)) ?>" count4="<? log(Math.floor(template.holiday.pages.length / 4)) ?>">
 <? for(let a = 0; a < liquorTypes.length; a++) { const data = liquorTypes[a]; ?>
 	<include src="card/drink.html" 

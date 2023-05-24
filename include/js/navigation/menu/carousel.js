@@ -9,7 +9,7 @@ function getRealWidth(element) {
 }
 
 function scrollCarousel(carousel, direction) {
-	carousel.indicators[carousel.index].classList.toggle("active", false);
+	if(carousel.indicators != false) carousel.indicators[carousel.index].classList.toggle("active", false);
 	carousel.index += direction;
 
 	// Fix the index overflow
@@ -19,7 +19,7 @@ function scrollCarousel(carousel, direction) {
 	// Translate
 	if (carousel.index === carousel.slideLength - 1) carousel.wrapper.style.transform = `translate(-${carousel.slideMax}%, 0)`;
 	else carousel.wrapper.style.transform = `translate(-${carousel.slideWidth * carousel.index}%, 0)`;
-	carousel.indicators[carousel.index].classList.toggle("active", true);
+	if(carousel.indicators != false) carousel.indicators[carousel.index].classList.toggle("active", true);
 }
 
 const carousels = document.querySelectorAll(".carousel");
@@ -28,34 +28,36 @@ for (const carousel of carousels) {
 	carousel.clicked = false;
 
 	// Get elements
-	carousel.wrapper = carousel.querySelector(".wrapper");
+	carousel.wrapper = carousel.querySelector(".carousel-wrapper");
 	carousel.indicators = carousel.querySelectorAll(".indicators div");
-	carousel.indicators[0].classList.toggle("active", true);
+	if(carousel.indicators.length === 0) carousel.indicators = false;
+	if(carousel.indicators != false) carousel.indicators[0].classList.toggle("active", true);
 
 	const carouselWidth = carousel.getBoundingClientRect().width;
 	const wrapperWidth = carousel.wrapper.getBoundingClientRect().width;
 
 	// Calculate children values
-	const child = carousel.wrapper.childNodes[0];
-	const childWidth = child.getBoundingClientRect().width;
-	const childRealWidth = getRealWidth(child);
-	const childWidthDiff = childRealWidth - childWidth; // Difference between element with & without padding
-	const childrenOnScreen = Math.round(carouselWidth / childRealWidth); // How many children are on display
+	const children = carousel.querySelectorAll(".carousel-wrapper > *");
+	const child = children[0];
+	const childWidth = parseInt(carousel.dataset.width);
+	const childrenOnScreen = Math.round(carouselWidth / childWidth); // How many children are on display
 
 	// Calculate total items & how many slides
-	carousel.length = carousel.indicators.length;
-	carousel.slideLength = (carousel.indicators.length - childrenOnScreen) + 1;
+	carousel.length = parseInt(carousel.dataset.items);
+	carousel.slideLength = (carousel.length - childrenOnScreen) + 1;
 
 	// Disable extra slides
-	for (let i = carousel.slideLength; i < carousel.indicators.length; i++) {
-		carousel.indicators[i].style.display = "none";
+	if(carousel.indicators != false){
+		for (let i = carousel.slideLength; i < carousel.length; i++) {
+			carousel.indicators[i].style.display = "none";
+		}
 	}
 
 	carousel.querySelector(".controls").style.opacity = 1;
 
 	// Calculate slide width variables
 	carousel.slideWidth = 100 / carousel.length;
-	carousel.slideMax = (((wrapperWidth - carouselWidth - childWidthDiff) / wrapperWidth)) * 100;
+	carousel.slideMax = (((wrapperWidth - carouselWidth) / wrapperWidth)) * 100;
 
 	// Add button listeners
 	const buttons = carousel.querySelectorAll(".buttons > div");
